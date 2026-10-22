@@ -6,21 +6,49 @@ Attack on Titan theme for [Omarchy Quattro](https://github.com/omacom/omarchy).
 
 ## Install
 
+Omarchy will not stage `*.lua` from a git-cloned theme, so a plain
+`omarchy theme install` gives you the palette but drops the workspace swipe,
+window blur and Hyprland border colours. Clone outside the themes directory and
+symlink it in instead — everything ships:
+
+```bash
+git clone https://github.com/Divyanshu-kumar14/AOT-THEME ~/.local/share/aot-theme
+mkdir -p ~/.config/omarchy/themes
+ln -sfn ~/.local/share/aot-theme ~/.config/omarchy/themes/aot-theme
+omarchy theme set aot-theme
+```
+
+Then pick **Aot Theme** in the theme switcher.
+
+If `~/.config/omarchy/themes/aot-theme` already exists as a real directory from
+a previous `omarchy theme install`, move it aside first so the symlink can take
+the name (skip this if it is already a symlink):
+
+```bash
+mv ~/.config/omarchy/themes/aot-theme ~/.config/omarchy/themes/aot-theme.bak
+```
+
+On a fresh machine, palette only, no Lua additions:
+
 ```bash
 omarchy theme install https://github.com/Divyanshu-kumar14/AOT-THEME
 ```
 
-Then `omarchy theme set aot-theme`, or pick **Aot Theme** from the theme switcher.
+See
+[If you installed with `omarchy theme install`](#if-you-installed-with-omarchy-theme-install)
+for the manual copy commands.
 
 ## What ships
 
-The repo root **is** the theme directory — `omarchy theme install` clones it
-straight into `~/.config/omarchy/themes/<repo-name>`. No nesting, no manifest.
+The repo root **is** the theme directory. Cloning it outside the themes
+directory and symlinking it into `~/.config/omarchy/themes/` is the full-feature
+install; `omarchy theme install` clones it directly but stages the palette only.
+No nesting, no manifest.
 
 ```
 AOT-THEME/
 ├── colors.toml      # the whole palette — the only required file
-├── hyprland.lua     # border colours + workspace swipe — see below
+├── hyprland.lua     # border colours, workspace swipe, blur — see below
 ├── icons.theme      # GTK icon theme (Yaru-blue)
 ├── neovim.lua       # optional, manual use — see below
 ├── backgrounds/     # Eren, Mikasa, Armin, Levi, Erwin
@@ -39,8 +67,8 @@ Ship a generated file yourself only to deviate from it — a file present in the
 theme directory is never overwritten by its template. `btop.theme`,
 `chromium.theme`, `helix.toml`, `obsidian.css`, `shell.toml` and `keyboard.rgb`
 are the ones worth overriding. `hyprland.lua` is shipped for the workspace
-swipe, which also freezes its border colours: if you change `colors.toml`,
-update the two colour values there to match.
+swipe, frosted-glass blur and border colours; the border values are frozen, so
+if you change `colors.toml`, update the two colour values there to match.
 
 ## Palette
 
@@ -76,18 +104,87 @@ Omarchy does not install Lua from third-party themes — it strips `*.lua` on
 install and generates its own copy from `colors.toml` — so this file is here for
 people who copy the repo by hand.
 
-## Workspace swipe
+## Hyprland additions
 
-`hyprland.lua` adds a macOS-like three-finger swipe: the workspace follows your
-fingers horizontally, commits when you release past halfway or flick, and snaps
-back if you don't. It also slides instead of cutting when you switch with a
-keybinding, so both motions match.
+`hyprland.lua` adds three things whenever AOT is the current theme: the
+workspace swipe, window blur with transparency, and border colours matched to
+the palette.
 
-Because the gesture lives in the theme, it is applied whenever AOT is the
-current theme — no manual Hyprland edit needed. Omarchy strips `*.lua` from
-themes cloned by `omarchy theme install`, so if you installed that way, copy the
-`hl.gesture(...)` line into `~/.config/hypr/input.lua` and the `hl.animation(...)`
-line into `~/.config/hypr/looknfeel.lua` instead.
+### Workspace swipe
+
+A macOS-like three-finger swipe: the workspace follows your fingers
+horizontally, commits when you release past halfway or flick, and snaps back if
+you don't. It also slides instead of cutting when you switch with a keybinding,
+so both motions match.
+
+### Blur and transparency
+
+Windows sit at 0.94 opacity when active and 0.88 when inactive, with the
+wallpaper blurred behind them (`size = 8`, `passes = 3`, popups included).
+Fullscreen stays opaque at 1.0, so video and full-screen terminals keep their
+contrast.
+
+Omarchy's own window rules keep browsers at `1.0 0.985`, so browser windows stay
+effectively opaque — deliberate, so video pages don't sit behind a blur.
+
+Tune the values in `hyprland.lua` and re-apply (adjust the path if you cloned
+elsewhere):
+
+```bash
+$EDITOR ~/.local/share/aot-theme/hyprland.lua
+omarchy theme set aot-theme
+```
+
+To turn blur off, set `enabled = false` in the `blur` block — or remove the
+whole `hl.config({ decoration = ... })` block — and re-apply.
+
+### If you installed with `omarchy theme install`
+
+That command leaves a `.git` directory in the theme, and Omarchy will not stage
+`*.lua` from a git-cloned theme. The palette still applies; the three additions
+above do not. Use the symlink install, or copy the blocks into your own config
+and reload Hyprland yourself.
+
+`~/.config/hypr/looknfeel.lua`:
+
+```lua
+hl.config({
+  decoration = {
+    active_opacity = 0.94,
+    inactive_opacity = 0.88,
+    fullscreen_opacity = 1.0,
+    blur = {
+      enabled = true,
+      size = 8,
+      passes = 3,
+      new_optimizations = true,
+      ignore_opacity = true,
+      xray = false,
+      popups = true,
+    },
+  },
+})
+
+hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "easeOutQuint" })
+```
+
+`~/.config/hypr/input.lua`:
+
+```lua
+hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+```
+
+Then reload:
+
+```bash
+hyprctl reload
+```
+
+The border colours are optional; Hyprland is already themed from `colors.toml`,
+so skip them unless you want the exact `#ff5c35` / `#f4e8d7` gradient.
+
+These edits live in your own config, so they stay active after you switch to a
+different theme. The theme's own copy applies only while AOT is current.
 
 ## Optional extras
 
@@ -102,7 +199,7 @@ Symlink the working copy so edits apply on every `omarchy theme set` without
 committing or copying:
 
 ```bash
-ln -s ~/build-themes/AOT-THEME ~/.config/omarchy/themes/aot-theme
+ln -s /path/to/AOT-THEME ~/.config/omarchy/themes/aot-theme
 omarchy theme set aot-theme
 ```
 
