@@ -1,0 +1,76 @@
+/* AOT palette for GTK 3 and GTK 4.
+ *
+ * Opt-in. Import it from the theme you already use, don't replace it:
+ *
+ *   ~/.config/gtk-3.0/gtk.css
+ *   ~/.config/gtk-4.0/gtk.css
+ *
+ *     @import url("aot-colors.css");
+ *
+ * This only remaps named colors — no widget, spacing or layout rules — so it
+ * recolors Adwaita and most GTK themes without breaking them.
+ * Omarchy itself sets dark mode and the icon theme only; everything else in a
+ * GTK app comes from here.
+ */
+
+@define-color theme_bg_color #0b0708;
+@define-color theme_fg_color #f4e8d7;
+@define-color theme_base_color #0b0708;
+@define-color theme_text_color #f4e8d7;
+
+@define-color theme_selected_bg_color #ff5c35;
+@define-color theme_selected_fg_color #0b0708;
+
+@define-color insensitive_bg_color #070405;
+@define-color insensitive_fg_color #9c7f76;
+@define-color insensitive_base_color #070405;
+
+@define-color theme_unfocused_bg_color #070405;
+@define-color theme_unfocused_fg_color #f4e8d7;
+@define-color theme_unfocused_base_color #070405;
+@define-color theme_unfocused_text_color #f4e8d7;
+@define-color theme_unfocused_selected_bg_color #ff5c35;
+@define-color theme_unfocused_selected_fg_color #0b0708;
+
+@define-color borders #401a20;
+@define-color unfocused_borders #401a20;
+
+@define-color content_view_bg #0b0708;
+@define-color text_view_bg #0b0708;
+
+/* Adwaita's own names */
+@define-color bg_color #0b0708;
+@define-color fg_color #f4e8d7;
+@define-color base_color #0b0708;
+@define-color text_color #f4e8d7;
+@define-color selected_bg_color #ff5c35;
+@define-color selected_fg_color #0b0708;
+@define-color window_bg_color #0b0708;
+@define-color window_fg_color #f4e8d7;
+@define-color view_bg_color #0b0708;
+@define-color view_fg_color #f4e8d7;
+@define-color headerbar_bg_color #1b1014;
+@define-color headerbar_fg_color #f4e8d7;
+@define-color popover_bg_color #1b1014;
+@define-color popover_fg_color #f4e8d7;
+@define-color card_bg_color #1b1014;
+@define-color card_fg_color #f4e8d7;
+@define-color dialog_bg_color #1b1014;
+@define-color dialog_fg_color #f4e8d7;
+
+/* Semantic roles */
+@define-color accent_color #ff5c35;
+@define-color accent_bg_color #ff5c35;
+@define-color accent_fg_color #0b0708;
+@define-color destructive_color #f0435a;
+@define-color destructive_bg_color #f0435a;
+@define-color destructive_fg_color #0b0708;
+@define-color success_color #4ecb71;
+@define-color success_bg_color #4ecb71;
+@define-color success_fg_color #0b0708;
+@define-color warning_color #f0c04a;
+@define-color warning_bg_color #f0c04a;
+@define-color warning_fg_color #0b0708;
+@define-color error_color #f0435a;
+@define-color error_bg_color #f0435a;
+@define-color error_fg_color #0b0708;

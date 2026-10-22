@@ -1,0 +1,53 @@
+# Omarchy theme palette — AOT / "Rumbling Dusk"
+#
+# Rebuilt from scratch. The first pass sampled the wallpaper literally, which
+# left every ANSI hue dusty and half the wheel missing. This one keeps the
+# world — ember, blood, steel, steam, crystal — but pushes each hue to terminal
+# chroma so it survives a dark background and a diff.
+#
+# Hues are spaced across the wheel (red 18°, orange 50°, yellow 86°,
+# green 150°, cyan 194°, blue 259°, magenta 319° in OKLCH) and every ANSI
+# colour clears 4.5:1 on `background`; foreground is 16.6:1.
+
+mode = "dark"
+
+# --- surfaces --------------------------------------------------------------
+# Ruined Wall Maria at night: warm near-black, never pure #000, so borders and
+# terminal cells keep an edge.
+background         = "#0b0708"
+dark_background    = "#070405"   # recessed wells, terminal black
+darker_background  = "#040203"   # deepest shadow
+lighter_background = "#1b1014"   # cards, popovers, status bars
+
+# --- text ------------------------------------------------------------------
+foreground        = "#f4e8d7"   # bone parchment, 16.6:1
+dark_foreground   = "#9c7f76"   # ash, 5.5:1 — still readable, not a ghost
+light_foreground  = "#fbf2e4"
+bright_foreground = "#fffaef"   # cursor, emphasis
+
+# --- signature -------------------------------------------------------------
+accent    = "#ff5c35"   # titan ember, the wallpaper red pushed to full chroma
+selection = "#401a20"   # dried blood, visible but never loud
+muted     = "#9c7f76"
+
+# --- ANSI ------------------------------------------------------------------
+red     = "#f0435a"   # blood
+orange  = "#ff8a3d"   # lantern fire
+yellow  = "#f0c04a"   # brass / lamp light
+green   = "#4ecb71"   # Survey Corps cloak in sunlight
+cyan    = "#3ddbd9"   # titan steam
+blue    = "#6aa5ff"   # blade steel
+magenta = "#d977f2"   # crystal cavern
+brown   = "#b07a52"   # leather harness
+
+bright_red     = "#ff6b7a"
+bright_yellow  = "#ffdb6e"
+bright_green   = "#6cf08c"
+bright_cyan    = "#5ff5ef"
+bright_blue    = "#8fb8ff"
+bright_magenta = "#f09bff"
+
+# --- Hyprland borders ------------------------------------------------------
+# Ember into bone: the wing highlight on the active window.
+hyprland_active_border   = "rgba(ff5c35ee) rgba(f4e8d7ee) 45deg"
+hyprland_inactive_border = "rgba(9c7f76aa)"
