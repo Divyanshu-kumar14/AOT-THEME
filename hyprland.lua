@@ -21,6 +21,27 @@ hl.config({
   },
 })
 
+-- Frosted glass: a little window transparency with the wallpaper blurred
+-- behind it. fullscreen stays opaque so video and full-screen terminals keep
+-- their contrast.
+hl.config({
+  decoration = {
+    active_opacity = 0.94,
+    inactive_opacity = 0.88,
+    fullscreen_opacity = 1.0,
+
+    blur = {
+      enabled = true,
+      size = 8,
+      passes = 3,
+      new_optimizations = true,
+      ignore_opacity = true,
+      xray = false,
+      popups = true,
+    },
+  },
+})
+
 -- macOS-like workspace switching: three fingers drag the workspace 1:1,
 -- release past halfway (or flick) to commit, release short to snap back.
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
