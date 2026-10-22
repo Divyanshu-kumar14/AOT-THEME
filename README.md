@@ -23,7 +23,7 @@ AOT-THEME/
 ├── hyprland.lua     # border colours + workspace swipe — see below
 ├── icons.theme      # GTK icon theme (Yaru-blue)
 ├── neovim.lua       # optional, manual use — see below
-├── backgrounds/     # Eren, Mikasa, Armin, Levi
+├── backgrounds/     # Eren, Mikasa, Armin, Levi, Erwin
 ├── preview.png      # theme switcher thumbnail
 └── README.md
 ```
