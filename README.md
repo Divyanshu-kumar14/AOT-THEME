@@ -2,7 +2,7 @@
 
 Attack on Titan theme for [Omarchy Quattro](https://github.com/omacom/omarchy).
 
-![AOT preview](preview.png)
+![AOT preview](preview.png?v=2)
 
 ## Install
 
