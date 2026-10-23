@@ -1,0 +1,31 @@
+# AOT Quickshell override — ships with the theme and is NOT overwritten by
+# Omarchy's generated shell.toml. Place at repo root next to colors.toml.
+#
+# Exact keys depend on your Quickshell / Omarchy version. Compare against the
+# generated shell.toml (omarchy dev theme-preview or ~/.config/quickshell/)
+# and align the section names if needed.
+#
+# Colors are pulled from the Rumbling Dusk palette in colors.toml.
+
+[colors]
+background   = "#0b0708"
+background_2 = "#1b1014"   # cards, popovers, status bars
+foreground   = "#f4e8d7"
+foreground_2 = "#9c7f76"   # muted / ash
+accent       = "#ff5c35"   # titan ember
+
+[border]
+# Matches hyprland.lua: ember into bone at 45°
+active   = "rgba(ff5c35ee) rgba(f4e8d7ee) 45deg"
+inactive = "rgba(9c7f76aa)"
+
+[osd]
+background = "#1b1014"
+foreground = "#f4e8d7"
+border     = "#ff5c35"
+
+[lock]
+background   = "#0b0708"
+foreground   = "#f4e8d7"
+accent       = "#ff5c35"
+wallpaper    = "backgrounds/Eren-Yeager.png"

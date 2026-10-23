@@ -47,12 +47,19 @@ No nesting, no manifest.
 
 ```
 AOT-THEME/
-├── colors.toml      # the whole palette — the only required file
-├── hyprland.lua     # border colours, workspace swipe, blur — see below
-├── icons.theme      # GTK icon theme (Yaru-blue)
-├── neovim.lua       # optional, manual use — see below
-├── backgrounds/     # Eren, Mikasa, Armin, Levi, Erwin
-├── preview.png      # theme switcher thumbnail
+├── colors.toml             # the whole palette — the only required file
+├── colors-armin.toml       # variant: misty sky / soft blue palette (Armin)
+├── colors-erwin.toml       # variant: brass / gold palette (Erwin)
+├── colors-levi.toml        # variant: cooler steel / blade palette (Levi)
+├── colors-mikasa.toml      # variant: deep blood / black palette (Mikasa)
+├── colors-eren.toml        # variant: burning crimson / deep black palette (Eren)
+├── hyprland.lua            # border colours, workspace swipe, blur — see below
+├── icons.theme             # GTK icon theme (Yaru-blue)
+├── neovim.lua              # optional, manual use — see below
+├── shell.toml              # Quickshell override — OSD, lock screen, borders
+├── vscode-theme.json.tpl   # VS Code theme template (overrides Omarchy default)
+├── backgrounds/            # Eren, Mikasa, Armin, Levi, Erwin
+├── preview.png             # theme switcher thumbnail
 └── README.md
 ```
 
@@ -192,6 +199,42 @@ different theme. The theme's own copy applies only while AOT is current.
 Spotify through spicetify, plus a paste-in GTK colour block. See
 [`extras/README.md`](extras/README.md). Nothing there is required to use the
 theme.
+
+## VS Code theme
+
+`vscode-theme.json.tpl` ships an improved Omarchy VS Code color theme template that uses more of the AOT palette — brown comments, magenta keywords, cyan parameters, blue functions, green strings, orange numbers, yellow classes, and distinct colors for each semantic token type instead of the default's heavy red bias.
+
+Omarchy generates `vscode-theme.json` from `colors.toml` and symlinks it into the `omarchy-theme` extension automatically on `omarchy theme set`. Ship your own `vscode-theme.json.tpl` next to `colors.toml` to override the generated colors — Omarchy will not overwrite a file that's already present.
+
+Activate a variant palette first (see Variants below), then:
+
+```bash
+omarchy theme set aot-theme
+```
+
+Reload VS Code (`Ctrl+Shift+P` → "Developer: Reload Window") to pick up the new colors.
+
+## Variants
+
+`colors.toml` is the default "Rumbling Dusk" palette. Three character variants
+ship alongside it — copy the one you want over `colors.toml` and re-apply:
+
+| Variant | File | Signature accent | Mood |
+|---------|------|------------------|------|
+| Default | `colors.toml` | `#ff5c35` titan ember | Blood, ember, steam |
+| Levi | `colors-levi.toml` | `#6aa5ff` blade steel | Cooler, reconnaissance |
+| Erwin | `colors-erwin.toml` | `#f0c04a` brass | Command, lantern gold |
+| Mikasa | `colors-mikasa.toml` | `#f0435a` blood red | Deep contrast, aggressive |
+| Armin | `colors-armin.toml` | `#7fb3d5` soft sky blue | Misty, cool, strategic |
+| Eren | `colors-eren.toml` | `#ff3b2c` burning crimson | Fierce, burning, aggressive |
+
+```bash
+cp colors-armin.toml colors.toml   # or colors-eren.toml / colors-levi.toml / ...
+omarchy theme set aot-theme
+```
+
+Each variant includes its own `hyprland_active_border` gradient so the window
+borders match the new accent.
 
 ## Development
 

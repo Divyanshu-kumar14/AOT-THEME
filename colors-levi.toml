@@ -1,0 +1,50 @@
+# Omarchy theme palette — AOT variant "Levi"
+#
+# Cooler, steel-dominated take on Rumbling Dusk. Blade steel (#6aa5ff) is the
+# signature accent; blood red is pushed into steel-blue so the whole wheel reads
+# Survey Corps reconnaissance rather than titan attack.
+#
+# Copy this file to colors.toml (or symlink it) to activate:
+#   cp colors-levi.toml colors.toml
+#   omarchy theme set aot-theme
+
+mode = "dark"
+
+# --- surfaces -----------------------------------------------------------------
+background         = "#0b0708"
+dark_background    = "#070405"
+darker_background  = "#040203"
+lighter_background = "#1b1014"
+
+# --- text ---------------------------------------------------------------------
+foreground        = "#f4e8d7"
+dark_foreground   = "#9c7f76"
+light_foreground  = "#fbf2e4"
+bright_foreground = "#fffaef"
+
+# --- signature ----------------------------------------------------------------
+accent    = "#6aa5ff"   # blade steel
+selection = "#1a3a5c"   # deep steel, visible but never loud
+muted     = "#9c7f76"
+
+# --- ANSI ---------------------------------------------------------------------
+red     = "#4a90c2"   # steel blood
+orange  = "#6aa5ff"   # blade steel
+yellow  = "#8fb8ff"   # pale steel
+green   = "#3ddbd9"   # titan steam
+cyan    = "#5ff5ef"   # bright steam
+blue    = "#6aa5ff"   # blade steel
+magenta = "#b388ff"   # crystal cavern, cooler
+brown   = "#7a8b99"   # harness in shadow
+
+bright_red     = "#6fb3e6"
+bright_yellow  = "#aecbff"
+bright_green   = "#5ff5ef"
+bright_cyan    = "#8df5f2"
+bright_blue    = "#8fb8ff"
+bright_magenta = "#c9aaff"
+
+# --- Hyprland borders ---------------------------------------------------------
+# Levi variant: steel into bone
+hyprland_active_border   = "rgba(6aa5ffee) rgba(f4e8d7ee) 45deg"
+hyprland_inactive_border = "rgba(9c7f76aa)"

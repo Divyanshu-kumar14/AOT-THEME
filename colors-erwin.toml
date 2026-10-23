@@ -1,0 +1,50 @@
+# Omarchy theme palette — AOT variant "Erwin"
+#
+# Brass and gold dominant. Erwin's palette reads as Survey Corps command —
+# lantern light, officer gold, warm command presence — instead of the default
+# titan ember.
+#
+# Copy this file to colors.toml (or symlink it) to activate:
+#   cp colors-erwin.toml colors.toml
+#   omarchy theme set aot-theme
+
+mode = "dark"
+
+# --- surfaces -----------------------------------------------------------------
+background         = "#0b0708"
+dark_background    = "#070405"
+darker_background  = "#040203"
+lighter_background = "#1b1014"
+
+# --- text ---------------------------------------------------------------------
+foreground        = "#f4e8d7"
+dark_foreground   = "#9c7f76"
+light_foreground  = "#fbf2e4"
+bright_foreground = "#fffaef"
+
+# --- signature ----------------------------------------------------------------
+accent    = "#f0c04a"   # brass / lamp light
+selection = "#3d2a0e"   # deep brass, visible but never loud
+muted     = "#9c7f76"
+
+# --- ANSI ---------------------------------------------------------------------
+red     = "#f0c04a"   # command brass
+orange  = "#ff8a3d"   # lantern fire
+yellow  = "#f0c04a"   # brass
+green   = "#b07a52"   # leather harness
+cyan    = "#3ddbd9"   # titan steam
+blue    = "#6aa5ff"   # blade steel
+magenta = "#d977f2"   # crystal cavern
+brown   = "#b07a52"   # leather harness
+
+bright_red     = "#ffdb6e"
+bright_yellow  = "#ffe59b"
+bright_green   = "#c9a082"
+bright_cyan    = "#5ff5ef"
+bright_blue    = "#8fb8ff"
+bright_magenta = "#f09bff"
+
+# --- Hyprland borders ---------------------------------------------------------
+# Erwin variant: brass into bone
+hyprland_active_border   = "rgba(f0c04aee) rgba(f4e8d7ee) 45deg"
+hyprland_inactive_border = "rgba(9c7f76aa)"

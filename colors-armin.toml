@@ -1,0 +1,50 @@
+# Omarchy theme palette — AOT variant "Armin"
+#
+# Misty, cool, and strategic. Armin's palette reads as fog over Shiganshina —
+# slate blues, soft sky, pale fog — entirely different from the default Rumbling
+# Dusk ember and blood.
+#
+# Copy this file to colors.toml (or symlink it) to activate:
+#   cp colors-armin.toml colors.toml
+#   omarchy theme set aot-theme
+
+mode = "dark"
+
+# --- surfaces -----------------------------------------------------------------
+background         = "#16202b"   # misty slate
+dark_background    = "#0e161e"
+darker_background  = "#0a0f16"
+lighter_background = "#243240"   # misty card
+
+# --- text ---------------------------------------------------------------------
+foreground        = "#c8d6e0"   # pale mist
+dark_foreground   = "#7a8f9e"
+light_foreground  = "#e8f0f6"
+bright_foreground = "#ffffff"
+
+# --- signature ----------------------------------------------------------------
+accent    = "#7fb3d5"   # soft sky blue — strategic calm
+selection = "#2a4a5e"   # deep mist
+muted     = "#7a8f9e"
+
+# --- ANSI ---------------------------------------------------------------------
+red     = "#5a8fae"   # mist red
+orange  = "#8fb3d5"   # soft orange-blue
+yellow  = "#b3c8d8"   # pale mist gold
+green   = "#6fb38e"   # soft sage
+cyan    = "#4fb3c9"   # mist cyan
+blue    = "#7fb3d5"   # sky blue
+magenta = "#a89fd0"   # soft lavender
+brown   = "#6e6a5e"   # misty brown
+
+bright_red     = "#8fb3c9"
+bright_yellow  = "#c8d6e0"
+bright_green   = "#8fc9a8"
+bright_cyan    = "#6fc9d9"
+bright_blue    = "#9fc9e0"
+bright_magenta = "#c0b8e0"
+
+# --- Hyprland borders ---------------------------------------------------------
+# Armin variant: soft sky into pale mist
+hyprland_active_border   = "rgba(7fb3d5ee) rgba(c8d6e0ee) 45deg"
+hyprland_inactive_border = "rgba(7a8f9eaa)"

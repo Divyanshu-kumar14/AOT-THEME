@@ -1,0 +1,50 @@
+# Omarchy theme palette — AOT variant "Eren"
+#
+# Fierce, burning, and aggressive. Eren's palette reads as titan rage — deep
+# crimson, burning amber, char — entirely different from the default Rumbling
+# Dusk and from Armin's cool mist.
+#
+# Copy this file to colors.toml (or symlink it) to activate:
+#   cp colors-eren.toml colors.toml
+#   omarchy theme set aot-theme
+
+mode = "dark"
+
+# --- surfaces -----------------------------------------------------------------
+background         = "#0a0404"   # deep blood-black
+dark_background    = "#050202"
+darker_background  = "#020101"
+lighter_background = "#1a0a0a"   # deep crimson card
+
+# --- text ---------------------------------------------------------------------
+foreground        = "#e8dcd4"   # warm bone
+dark_foreground   = "#8c5a5a"
+light_foreground  = "#f4e8d7"
+bright_foreground = "#fff0e8"
+
+# --- signature ----------------------------------------------------------------
+accent    = "#ff3b2c"   # burning crimson — titan rage
+selection = "#2a0a0a"   # deep blood
+muted     = "#8c5a5a"
+
+# --- ANSI ---------------------------------------------------------------------
+red     = "#ff3b2c"   # burning crimson
+orange  = "#ff6b35"   # titan fire
+yellow  = "#ffa855"   # burning amber
+green   = "#4ecb71"   # titan steam
+cyan    = "#ff5c35"   # burning ember
+blue    = "#6aa5ff"   # blade steel
+magenta = "#ff77aa"   # titan pink
+brown   = "#4a2a2a"   # dried blood brown
+
+bright_red     = "#ff5c35"
+bright_yellow  = "#ffc080"
+bright_green   = "#6cf08c"
+bright_cyan    = "#ff7a55"
+bright_blue    = "#8fb8ff"
+bright_magenta = "#ff9bcc"
+
+# --- Hyprland borders ---------------------------------------------------------
+# Eren variant: burning crimson into warm bone
+hyprland_active_border   = "rgba(ff3b2cee) rgba(e8dcd4ee) 45deg"
+hyprland_inactive_border = "rgba(8c5a5aaa)"

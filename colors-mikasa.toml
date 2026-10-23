@@ -1,0 +1,50 @@
+# Omarchy theme palette — AOT variant "Mikasa"
+#
+# Deep blood and black. Mikasa's palette pushes the default into higher
+# contrast — darker surfaces, blood-red accent — for a sharper, more
+# aggressive look.
+#
+# Copy this file to colors.toml (or symlink it) to activate:
+#   cp colors-mikasa.toml colors.toml
+#   omarchy theme set aot-theme
+
+mode = "dark"
+
+# --- surfaces -----------------------------------------------------------------
+background         = "#070405"   # deeper than default
+dark_background    = "#040203"
+darker_background  = "#020101"
+lighter_background = "#1b1014"
+
+# --- text ---------------------------------------------------------------------
+foreground        = "#f4e8d7"
+dark_foreground   = "#9c7f76"
+light_foreground  = "#fbf2e4"
+bright_foreground = "#fffaef"
+
+# --- signature ----------------------------------------------------------------
+accent    = "#f0435a"   # blood red
+selection = "#2a0a0f"   # dried blood, deep
+muted     = "#9c7f76"
+
+# --- ANSI ---------------------------------------------------------------------
+red     = "#f0435a"   # blood
+orange  = "#f0435a"   # blood-orange
+yellow  = "#ff8a3d"   # lantern fire
+green   = "#4ecb71"   # Survey Corps cloak in sunlight
+cyan    = "#3ddbd9"   # titan steam
+blue    = "#6aa5ff"   # blade steel
+magenta = "#d977f2"   # crystal cavern
+brown   = "#b07a52"   # leather harness
+
+bright_red     = "#ff6b7a"
+bright_yellow  = "#ffa86b"
+bright_green   = "#6cf08c"
+bright_cyan    = "#5ff5ef"
+bright_blue    = "#8fb8ff"
+bright_magenta = "#f09bff"
+
+# --- Hyprland borders ---------------------------------------------------------
+# Mikasa variant: blood into bone
+hyprland_active_border   = "rgba(f0435aee) rgba(f4e8d7ee) 45deg"
+hyprland_inactive_border = "rgba(9c7f76aa)"
