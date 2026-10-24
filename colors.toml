@@ -1,50 +1,50 @@
-# Omarchy theme palette — AOT variant "Erwin"
+# Omarchy theme palette — AOT variant "Eren"
 #
-# Brass and gold dominant. Erwin's palette reads as Survey Corps command —
-# lantern light, officer gold, warm command presence — instead of the default
-# titan ember.
+# Fierce, burning, and aggressive. Eren's palette reads as titan rage — deep
+# crimson, burning amber, char — entirely different from the default Rumbling
+# Dusk and from Armin's cool mist.
 #
 # Copy this file to colors.toml (or symlink it) to activate:
-#   cp colors-erwin.toml colors.toml
+#   cp colors-eren.toml colors.toml
 #   omarchy theme set aot-theme
 
 mode = "dark"
 
 # --- surfaces -----------------------------------------------------------------
-background         = "#0b0708"
-dark_background    = "#070405"
-darker_background  = "#040203"
-lighter_background = "#1b1014"
+background         = "#0a0404"   # deep blood-black
+dark_background    = "#050202"
+darker_background  = "#020101"
+lighter_background = "#1a0a0a"   # deep crimson card
 
 # --- text ---------------------------------------------------------------------
-foreground        = "#f4e8d7"
-dark_foreground   = "#9c7f76"
-light_foreground  = "#fbf2e4"
-bright_foreground = "#fffaef"
+foreground        = "#e8dcd4"   # warm bone
+dark_foreground   = "#8c5a5a"
+light_foreground  = "#f4e8d7"
+bright_foreground = "#fff0e8"
 
 # --- signature ----------------------------------------------------------------
-accent    = "#f0c04a"   # brass / lamp light
-selection = "#3d2a0e"   # deep brass, visible but never loud
-muted     = "#9c7f76"
+accent    = "#ff3b2c"   # burning crimson — titan rage
+selection = "#2a0a0a"   # deep blood
+muted     = "#8c5a5a"
 
 # --- ANSI ---------------------------------------------------------------------
-red     = "#f0c04a"   # command brass
-orange  = "#ff8a3d"   # lantern fire
-yellow  = "#f0c04a"   # brass
-green   = "#b07a52"   # leather harness
-cyan    = "#3ddbd9"   # titan steam
+red     = "#ff3b2c"   # burning crimson
+orange  = "#ff6b35"   # titan fire
+yellow  = "#ffa855"   # burning amber
+green   = "#4ecb71"   # titan steam
+cyan    = "#ff5c35"   # burning ember
 blue    = "#6aa5ff"   # blade steel
-magenta = "#d977f2"   # crystal cavern
-brown   = "#b07a52"   # leather harness
+magenta = "#ff77aa"   # titan pink
+brown   = "#4a2a2a"   # dried blood brown
 
-bright_red     = "#ffdb6e"
-bright_yellow  = "#ffe59b"
-bright_green   = "#c9a082"
-bright_cyan    = "#5ff5ef"
+bright_red     = "#ff5c35"
+bright_yellow  = "#ffc080"
+bright_green   = "#6cf08c"
+bright_cyan    = "#ff7a55"
 bright_blue    = "#8fb8ff"
-bright_magenta = "#f09bff"
+bright_magenta = "#ff9bcc"
 
 # --- Hyprland borders ---------------------------------------------------------
-# Erwin variant: brass into bone
-hyprland_active_border   = "rgba(f0c04aee) rgba(f4e8d7ee) 45deg"
-hyprland_inactive_border = "rgba(9c7f76aa)"
+# Eren variant: burning crimson into warm bone
+hyprland_active_border   = "rgba(ff3b2cee) rgba(e8dcd4ee) 45deg"
+hyprland_inactive_border = "rgba(8c5a5aaa)"
